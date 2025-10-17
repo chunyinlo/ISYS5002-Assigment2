@@ -1,0 +1,32 @@
+Tool: ChatGPT
+Date: 2025-10-17
+----------------------------------
+[Header] Conversation: edge cases & debugging real errors
+[Techniques] Challenge edge cases; Handle incorrect/problematic responses
+
+Me: Edge cases to consider: empty 'hourly', non-numeric 'precipMM', missing keys, weird location names, and limited days from wttr.in. Propose robust fallbacks.
+
+AI: Use safe access (dict.get with defaults), guard hourly with (list or []), try/except float conversion, and friendly error messages.
+
+Me: Real error I hit in Colab:
+NameError: daily_precip_mm is not defined
+It occurred inside create_precipitation_visualisation() when computing mm.
+
+AI: Diagnosis: the helper wasn’t defined/executed before use. Two fixes:
+(A) Define and execute daily_precip_mm earlier; (B) Inline the precipitation calculation so the chart has no hidden dependencies. (B) is safer for a single-file notebook; (A) is cleaner if reused widely.
+
+Me: Please rewrite with fix (B). I prefer self-contained plotting for the marker.
+
+AI: [Provided inline version computing mean/sum with try/except.]
+
+Me: Another real issue: the UI produced 404 when I asked “Will it rain in Perth tomorrow?” because the URL became https://wttr.in/in+perth+tomorrow?format=j1
+
+AI: Root cause: the regex captured “in perth tomorrow” as the location. Fix:
+- Add stop words {today, tomorrow, tonight, day, after, weekend, week, d2, d3}
+- Truncate the captured location at the first stop word (so “perth tomorrow” → “perth”)
+- In the UI handler, if parse returns no location, fall back to the Location field
+
+Me: Implemented these fixes; 404 resolved and Q&A works.
+
+[Notes] This conversation documents real debugging and the prompts that led to robust fixes.
+

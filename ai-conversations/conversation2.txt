@@ -1,0 +1,39 @@
+----------------------------------
+Tool: ChatGPT
+Date: 2025-10-17
+----------------------------------
+[Header] Conversation about function I/O contracts and normalised data model
+[Techniques] Identify input/output requirements
+
+Me: List exact inputs/outputs for the core functions and provide a short example payload using wttr.in.
+Functions:
+- get_weather_data(location, forecast_days=5) → dict {"location","current","days":[…]}
+- create_temperature_visualisation(weather_data, output_type='display'|'figure') → show or Figure
+- create_precipitation_visualisation(weather_data, output_type='display'|'figure') → show or Figure
+- parse_weather_question(question) → dict {"attribute","day_index","location"}
+- generate_weather_response(parsed_question, weather_data) → str
+
+AI: I/O summary + example:
+get_weather_data returns:
+{
+  "location": "Perth",
+  "current": {"temp_C": "18"},
+  "days": [
+    {"maxtempC":"25","mintempC":"15","hourly":[{"precipMM":"0.2","windspeedKmph":"13"}, ...]},
+    {"maxtempC":"23","mintempC":"14","hourly":[...]},
+    {"maxtempC":"22","mintempC":"13","hourly":[...]}
+  ]
+}
+Visualisation functions read weather_data["days"] and plot per-day values. NLP returns attribute/day_index/location; response composes a sentence.
+
+Me: Check my current code against this contract (I pasted it). Any minimal fixes?
+
+AI: Suggestions:
+- Cap forecast_days to 1..5 and slice to available days (wttr.in usually ~3).
+- Wrap requests/JSON in try/except; call r.raise_for_status(); use safe defaults when keys missing.
+- Keep the returned dict shape consistent for downstream plotting/NLP.
+
+Me: Confirm that even if forecast_days=5, wttr.in typically provides ~3 days so charts show D1–D3, not an error.
+
+AI: Confirmed—document that behaviour in README and a markdown cell in the notebook.
+[Notes] We locked the interface and an example structure, which guides the rest of the notebook.

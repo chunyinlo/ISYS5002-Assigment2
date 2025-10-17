@@ -1,0 +1,26 @@
+Tool: ChatGPT
+Date: 2025-10-17
+----------------------------------
+Tool: ChatGPT
+Date: 2025-10-17
+----------------------------------
+[Header] Conversation: modular helper & design trade-offs
+[Techniques] Request modular improvements; Ask for explanations; Query trade-offs
+
+Me: Propose a minimal helper daily_precip_mm(day, method='mean24') and explain why 'mean24' is a reasonable default vs 'sum'. Show how the chart can call it without changing the public function’s signature.
+
+AI: Helper:
+- mean8 averages first 8 hours (quick morning proxy),
+- mean24 averages all available hours (default: smoother, less overcount risk),
+- sum may overcount if precipMM is per-interval.
+Chart calls helper to compute y values.
+
+Me: Explain the helper line-by-line in plain English so I can document it in the notebook.
+
+AI: [Line-by-line explanation returned.]
+
+Me: Trade-off: wttr.in (no key, ~3 days) vs Open-Meteo (no key, 5+ days). With limited time, which is safer for grading?
+
+AI: Stick to wttr.in for simplicity and reliability; if strict 5-day visuals are required, add a toggle to Open-Meteo while keeping wttr.in as default; document the limitation in README and the notebook.
+
+[Notes] Records modularity decisions and architectural trade-offs that align with the rubric.

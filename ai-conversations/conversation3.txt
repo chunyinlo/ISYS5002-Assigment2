@@ -1,0 +1,32 @@
+Tool: ChatGPT
+Date: 2025-10-17
+----------------------------------
+[Header] Conversation: pseudocode-first for precipitation chart
+[Techniques] Request pseudocode; Iterative improvements
+
+Me: Before any code, give pseudocode for create_precipitation_visualisation(). Constraints:
+- wttr.in lacks a clean daily total; approximate from hourly.precipMM
+- method ∈ {mean8, mean24, sum}
+- output_type ∈ {'display','figure'}
+- use only basic Python + matplotlib
+
+AI: Pseudocode:
+1) Validate weather_data has days; else raise ValueError.
+2) For each day:
+   a) pick hours = first 8 if method=='mean8' else all available
+   b) convert precipMM to floats with try/except; collect to vals
+   c) value = sum(vals) if method=='sum' else sum(vals)/len(vals) if vals else 0.0
+3) Bar plot (x=D1..Dn, y=value); labels/title.
+4) If output_type=='figure' return Figure; else show.
+
+Me: Convert to Python from the pseudocode.
+
+AI: [Initial implementation provided.]
+
+Me: Iterate improvements:
+- Add clear labels and title with location; legend not needed for bars.
+- Keep code self-contained (no hidden dependency on an external helper).
+- Only return Figure when output_type=='figure'; otherwise call plt.show().
+
+AI: [Revised implementation with validation, try/except, conditional return.]
+[Notes] Demonstrates pseudocode-first then refinement by targeted prompts.
