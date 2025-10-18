@@ -62,3 +62,5 @@ def parse_weather_question(question):
 Why this was effective?
 
 It directly targeted the real bug (404) by tightening location extraction and adding a UI fallback, making NLP more robust for natural phrases like “in Perth tomorrow”.
+
+Source conversation: ai-conversations/conversation4.txt
