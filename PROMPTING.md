@@ -13,21 +13,21 @@ I used ChatGPT to plan options, stabilise function input/output, draft pseudocod
 
 ## 3) Before/After Evidence 
 ### 3.1 Precipitation approximation
-- **My prompt (excerpt)**: “Add a method switch (mean8/mean24/sum) and safe parsing of `precipMM`. Includd labels and input validation.”
-- **Improvement**: Flexible method + robust parsing; clearer chart.
-- **Links**: `before-after/Precipitation approximation.md` · `ai-conversations/conversation3.txt`
+- **My prompt (excerpt)**: “Add a method switch (mean8/mean24/sum) and safe parsing of `precipMM`. Include labels and input validation.”
+- **Improvement**: Flexible method and robust parsing; clearer chart.
+- **Links**: [before-after/Precipitation approximation.md](before-after/Precipitation%20approximation.md) · [ai-conversations/conversation3.txt](ai-conversations/conversation3.txt)
 - **Trace**: Implemented in `Notebook.ipynb` (visualisation function)
 
 ### 3.2 NLP location parsing (404 fix)
 - **My prompt (excerpt)**: “Strip stop-words (in/today/tomorrow) from location; fallback to typed Location if parsing fails.”
-- **Improvement**: 404 eliminated; natural questions work.
-- **Links**: `before-after/NLP location parsing (404 fix).md` · `ai-conversations/conversation4.txt`
+- **Improvement**: 404 eliminated and natural questions work.
+- **Links**: [before-after/NLP location parsing (404 fix).md](before-after/NLP%20location%20parsing%20(404%20fix).md) · [ai-conversations/conversation4.txt](ai-conversations/conversation4.txt)
 - **Trace**: `parse_weather_question()` and UI cell
 
 ### 3.3 Temperature chart polish
 - **My prompt (excerpt)**: “Add axis labels, legend, and return a Figure when `output_type='figure'`.”
-- **Improvement**: Readable plot + figure-return contract verified in tests.
-- **Links**: `before-after/Temperature chart polishing.md` · `ai-conversations/conversation2.txt`
+- **Improvement**: Readable plot and figure-return contract verified in tests.
+- **Links**: [before-after/Temperature chart polishing.md](before-after/Temperature%20chart%20polishing.md) · [ai-conversations/conversation2.txt](ai-conversations/conversation2.txt)
 - **Trace**: `create_temperature_visualisation()`
 
 ## 4) Handling a wrong/unsafe suggestion
