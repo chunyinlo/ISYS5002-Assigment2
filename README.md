@@ -5,7 +5,7 @@ This is a lean Hybrid solution: two visualisations (temperature line, precipitat
 **Data source:** wttr.in JSON (`https://wttr.in/<location>?format=j1`) – no API key, typically ~3-day forecast.
 
 ## How to Run (Google Colab)
-1. Open the notebook in Colab.
+1. Open the [Notebook](Notebook.ipynb) in Colab.
 2. Run **Setup and Configuration** cells (installs: `requests`, `matplotlib`, `ipywidgets` if needed).
 3. Run sections in order: Weather Data → Visualisations → NLP → Main Logic → UI.
 4. In the form, set *Location/Days* and click **Fetch & Plot**; try a question like  
