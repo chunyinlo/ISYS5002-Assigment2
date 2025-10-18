@@ -12,17 +12,17 @@ This is a lean Hybrid solution: two visualisations (temperature line, precipitat
    *“Will it rain in Perth tomorrow?”*
 
 ## AI Conversations & Before/After
-Conversations (text files):
-- `ai-conversations/conversation1.txt` – Implementation options  
-- `ai-conversations/conversation2.txt` – Function I/O and data model  
-- `ai-conversations/conversation3.txt` – Pseudocode → precipitation chart  
-- `ai-conversations/conversation4.txt` – Edge cases & debugging (NameError, 404 fix)  
-- `ai-conversations/conversation5.txt` – Modular helper & trade-offs  
+**Conversations (text files):**
+- [ai-conversations/conversation1.txt](ai-conversations/conversation1.txt) – Implementation options
+- [ai-conversations/conversation2.txt](ai-conversations/conversation2.txt) – Function I/O and data model
+- [ai-conversations/conversation3.txt](ai-conversations/conversation3.txt) – Pseudocode → precipitation chart
+- [ai-conversations/conversation4.txt](ai-conversations/conversation4.txt) – Edge cases & debugging (NameError, 404 fix)
+- [ai-conversations/conversation5.txt](ai-conversations/conversation5.txt) – Modular helper & trade-offs
 
-Before/After examples:
-- `before-after/Precipitation approximation.md` – Precipitation approximation  
-- `before-after/NLP location parsing (404 fix).md` – NLP location parsing (404 fix)  
-- `before-after/Temperature chart polishing.md` – Temperature chart polish
+**Before/After examples:**
+- [before-after/Precipitation approximation.md](before-after/Precipitation%20approximation.md) – Precipitation approximation
+- [before-after/NLP location parsing (404 fix).md](before-after/NLP%20location%20parsing%20(404%20fix).md) – NLP location parsing (404 fix)
+- [before-after/Temperature chart polishing.md](before-after/Temperature%20chart%20polishing.md) – Temperature chart polish
 
 ## Notes & Limitations
 - wttr.in usually provides ~3 days; the app caps plots to available days.
