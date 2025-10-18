@@ -1,63 +1,30 @@
 # 🌦️ WeatherWise Template
 
-Welcome to the **WeatherWise Assignment Starter Template**! This repository helps you kickstart your project by combining Python, weather APIs, data visualisation, and AI-assisted development. 🤖📊
+## Project Overview
+This is a lean Hybrid solution: two visualisations (temperature line, precipitation bar) + simple NLP Q&A + a small ipywidgets form.  
+**Data source:** wttr.in JSON (`https://wttr.in/<location>?format=j1`) – no API key, typically ~3-day forecast.
 
-![Build With AI](https://img.shields.io/badge/Built_with-AI-blueviolet?logo=openai)
-![Python](https://img.shields.io/badge/Made_with-Python-3776AB?logo=python)
-![Visualisation](https://img.shields.io/badge/Includes-Visualisations-orange?logo=plotly)
+## How to Run (Google Colab)
+1. Open the notebook in Colab.
+2. Run **Setup and Configuration** cells (installs: `requests`, `matplotlib`, `ipywidgets` if needed).
+3. Run sections in order: Weather Data → Visualisations → NLP → Main Logic → UI.
+4. In the form, set *Location/Days* and click **Fetch & Plot**; try a question like  
+   *“Will it rain in Perth tomorrow?”*
 
----
+## AI Conversations & Before/After
+Conversations (text files):
+- `ai-conversations/conversation1.txt` – Implementation options  
+- `ai-conversations/conversation2.txt` – Function I/O and data model  
+- `ai-conversations/conversation3.txt` – Pseudocode → precipitation chart  
+- `ai-conversations/conversation4.txt` – Edge cases & debugging (NameError, 404 fix)  
+- `ai-conversations/conversation5.txt` – Modular helper & trade-offs  
 
-## 🚀 How to Use This Template
+Before/After examples:
+- `before-after/Precipitation approximation.md` – Precipitation approximation  
+- `before-after/NLP location parsing (404 fix).md` – NLP location parsing (404 fix)  
+- `before-after/Temperature chart polishing.md` – Temperature chart polish
 
-1. Click **"Use this template"** on GitHub to create your own copy.
-2. Rename your repository to something like `weatherwise-jane-doe`.
-3. Clone it and start developing in `starter_notebook.ipynb`.
+## Notes & Limitations
+- wttr.in usually provides ~3 days; the app caps plots to available days.
+- If a strict 5-day visual is required, you can switch the data source to Open-Meteo (no key) as a future extension.
 
----
-
-## 📁 Folder Structure
-
-- `starter_notebook.ipynb` — Main notebook to build your project.
-- `ASSIGNMENT.md` — Full assignment specification.
-- `ai-conversations/` — Save your `.txt` AI conversations here.
-- `resources/` — Guides, prompting tips, and AI technique examples.
-- `submission/` — Files to help you finalise your submission:
-  - `checklist-md.md` — Submission checklist
-  - `reflection.md` — Write your 300–500 word project reflection
-  - `one-page-summary.md` — (Optional) Your own summary of key ideas or process
-
----
-
-📄 **Quick Overview:**  
-A one-page summary of the full assignment is available in [`resources/assignment-summary.md`](resources/assignment-summary.md).
-
----
-
-## 📓 Submission Checklist
-
-✅ Complete all required functions  
-✅ Include at least 5 AI conversations in `ai-conversations/`  
-✅ Document your intentional prompting  
-✅ Fill in your project reflection in `submission/reflection-template.md`  
-✅ Zip your project and upload it to the LMS  
-
----
-
-🧠 AI Conversations  
-Save your AI interactions in the `ai-conversations/` folder.  
-See `ai-conversations/how-to-log-ai-conversations.md` for details.
-
-
---
-## 🧠 Need Help with AI Prompts?
-
-Check out:
-Check out:
-- `resources/ai-tips-tricks.md` — Prompting tips and pitfalls
-- `resources/sample-prompting-journey.md` — Full example of AI-enhanced development
-- `resources/prompts-by-method-step.md` — Prompts aligned with the 6-step dev process
-- `resources/before-after-example.md` — Required: Show how your prompting improved AI-generated code
-
-
-Good luck and have fun! 💡🌤️
