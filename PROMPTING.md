@@ -1,17 +1,17 @@
 # PROMPTING.md
 
-## 1) What I asked the AI to help me with (Overview, ~3–5 lines)
+## 1) What I asked the AI to help me with 
 I used ChatGPT to plan options, stabilise function input/output, draft pseudocode, challenge edge cases, and iteratively improve code and documentation. The goal was a small hybrid app in Colab: fetch (no-key), two charts, simple NLP, and a widgets UI.
 
 ## 2) Intentional Prompting Techniques Used
 - **Problem restatement & option choice**: I restated the brief and compared dashboard/chatbot/hybrid and chose **Hybrid** for balanced scope.
-- **I/O contracts first**: asked the AI to define Args/Returns for the 5 core functions to prevent downstream breakage.
+- **Input/output contracts first**: asked the AI to define Args/Returns for the 5 core functions to prevent downstream breakage.
 - **Pseudocode-first**: precipitation visual—requested steps before asking for code.
 - **Edge-case challenges**: explicitly prompted for 404 fix when location contains “in/today/tomorrow” and handle missing & non-numeric values.
 - **Modular improvements**: establish `output_type = 'display'|'figure'` so plots are testable without auto-show.
 - **Trade-offs**: discuss wttr.in (no key, ~3 days) vs 5-day sources; keep toggle as future option.
 
-## 3) Before/After Evidence (3 examples)
+## 3) Before/After Evidence 
 ### 3.1 Precipitation approximation
 - **My prompt (excerpt)**: “Add a method switch (mean8/mean24/sum) and safe parsing of `precipMM`. Includd labels and input validation.”
 - **Improvement**: Flexible method + robust parsing; clearer chart.
