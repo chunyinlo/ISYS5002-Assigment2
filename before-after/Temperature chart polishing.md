@@ -51,3 +51,5 @@ def create_temperature_visualisation(weather_data, output_type='display'):
 Why this was effective?
 
 The prompt added assessor-friendly elements (validation, labels, legend) and a clear return/display contract, making the function easier to test and reuse.
+
+Source conversation: ai-conversations/conversation2.txt, ai-conversations/conversation5.txt
