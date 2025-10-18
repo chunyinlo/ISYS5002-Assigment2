@@ -62,5 +62,7 @@ Why this was effective?
 
 The prompt clarified I/O and error handling, added a tunable method (mean8/mean24/sum) to avoid overcounting, and made the function easier to assess and reuse (display vs figure).
 
+Source: conversation: ai-conversations/conversation3.txt
+
 
 
