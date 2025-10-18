@@ -24,6 +24,9 @@ This is a lean Hybrid solution: two visualisations (temperature line, precipitat
 - [before-after/NLP location parsing (404 fix).md](before-after/NLP%20location%20parsing%20(404%20fix).md) – NLP location parsing (404 fix)
 - [before-after/Temperature chart polishing.md](before-after/Temperature%20chart%20polishing.md) – Temperature chart polish
 
+**Intentional prompting evidence:** see [PROMPTING.md](PROMPTING.md) for techniques, links to conversations, and Before/After traces.
+
+
 ## Notes & Limitations
 - wttr.in usually provides ~3 days; the app caps plots to available days.
 - If a strict 5-day visual is required, you can switch the data source to Open-Meteo (no key) as a future extension.
